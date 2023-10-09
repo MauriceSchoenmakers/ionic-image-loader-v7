@@ -3,7 +3,7 @@
     "registry": "https://art02.sg.de.pri.o2.com/artifactory/api/npm/npm-local/"
   },
   "name": "o2-ionic-image-loader-v7",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ionic-image-loader for Ionic v7",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -52,8 +52,5 @@
     "tslib": "^2.6.2",
     "typescript": "~5.0.2",
     "zone.js": "~0.14.0"
-  },
-  "peerDependencies": {
-    "@ionic-native/file": "6.3.0"
   }
 }
