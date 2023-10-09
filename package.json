@@ -17,7 +17,7 @@
     "prebuild": "rimraf dist aot",
     "build": "ngc",
     "lint": "eslint \"src/**/*.ts\"",
-    "publish": "npm run prebuild && npm run build && npm publish"
+    "prepublish": "npm run prebuild && npm run build"
   },
   "keywords": [
     "ionic6",
