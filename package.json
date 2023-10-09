@@ -3,7 +3,7 @@
     "registry": "https://art02.sg.de.pri.o2.com/artifactory/api/npm/npm-local/"
   },
   "name": "o2-ionic-image-loader-v7",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ionic-image-loader for Ionic v7",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -31,7 +31,7 @@
     "@angular/compiler": "^16.2.7",
     "@angular/compiler-cli": "^16.2.7",
     "@angular/core": "^16.2.7",
-    "@angular/forms":  "^16.2.7",
+    "@angular/forms": "^16.2.7",
     "@angular/platform-browser": "^16.2.7",
     "@angular/platform-browser-dynamic": "^16.2.7",
     "@angular/router": "^16.2.7",
