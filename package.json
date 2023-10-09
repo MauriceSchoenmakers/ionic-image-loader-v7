@@ -3,7 +3,7 @@
     "registry": "https://art02.sg.de.pri.o2.com/artifactory/api/npm/npm-local/"
   },
   "name": "o2-ionic-image-loader-v7",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "ionic-image-loader for Ionic v7",
   "main": "dist/index.js",
   "module": "dist/index.js",
