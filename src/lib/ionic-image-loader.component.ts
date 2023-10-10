@@ -33,16 +33,16 @@ export class IonicImageLoaderComponent implements OnInit {
   /**
    * Fallback URL to load when the image url fails to load or does not exist.
    */
-  @Input() fallbackUrl: string = this.config.fallbackUrl;
+  @Input() fallbackUrl: string;
   /**
    * Whether to show a spinner while the image loads
    */
-  @Input() spinner: boolean = this.config.spinnerEnabled;
+  @Input() spinner: boolean;
   /**
    * Whether to show the fallback image instead of a spinner while the image loads
    */
 
-  @Input() fallbackAsPlaceholder: boolean = this.config.fallbackAsPlaceholder;
+  @Input() fallbackAsPlaceholder: boolean;
   /**
    * Attributes to pass through to img tag if _useImg == true
    */
@@ -54,31 +54,31 @@ export class IonicImageLoaderComponent implements OnInit {
   /**
    * Width of the image. This will be ignored if using useImg.
    */
-  @Input() width: string = this.config.width;
+  @Input() width: string;
   /**
    * Height of the image. This will be ignored if using useImg.
    */
-  @Input() height: string = this.config.height;
+  @Input() height: string;
   /**
    * Display type of the image. This will be ignored if using useImg.
    */
-  @Input() display: string = this.config.display;
+  @Input() display: string;
   /**
    * Background size. This will be ignored if using useImg.
    */
-  @Input() backgroundSize: string = this.config.backgroundSize;
+  @Input() backgroundSize: string;
   /**
    * Background repeat. This will be ignored if using useImg.
    */
-  @Input() backgroundRepeat: string = this.config.backgroundRepeat;
+  @Input() backgroundRepeat: string;
   /**
    * Name of the spinner
    */
-  @Input() spinnerName: string = this.config.spinnerName;
+  @Input() spinnerName: string;
   /**
    * Color of the spinner
    */
-  @Input() spinnerColor: string = this.config.spinnerColor;
+  @Input() spinnerColor: string;
   /**
    * Notify on image load..
    */
@@ -96,9 +96,22 @@ export class IonicImageLoaderComponent implements OnInit {
       private imageLoader: ImageLoaderService,
       private config: ImageLoaderConfigService,
   ) {
+    this.fallbackUrl = this.config.fallbackUrl;
+    this.spinner  = this.config.spinnerEnabled;
+    this.fallbackAsPlaceholder = this.config.fallbackAsPlaceholder;
+    this.imgAttributes = [];
+    this.cache = true;
+    this.width = this.config.width;
+    this.height = this.config.height;
+    this.display = this.config.display;
+    this.backgroundSize = this.config.backgroundSize;
+    this.backgroundRepeat = this.config.backgroundRepeat;
+    this.spinnerName = this.config.spinnerName;
+    this.spinnerColor = this.config.spinnerColor;
+    this._useImg = this.config.useImg;
   }
 
-  private _useImg: boolean = this.config.useImg;
+  private _useImg: boolean;
 
   /**
    * Use <img> tag
@@ -183,7 +196,7 @@ export class IonicImageLoaderComponent implements OnInit {
    * @param imageUrl image src
    * @param stopLoading set to true to mark the image as loaded
    */
-  private setImage(imageUrl: string, stopLoading: boolean = true): void {
+  private setImage(imageUrl: string, stopLoading = true): void {
     this.isLoading = !stopLoading;
 
     if (this._useImg) {
